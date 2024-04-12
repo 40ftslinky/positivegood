@@ -1,0 +1,148 @@
+/* variables.css */
+
+:root {
+    /* page */
+    --page-variable: var(--default);
+    /* colours */
+    --color-primary-light: #6A7176;
+    --color-primary: #4d4d4f;
+    --color-primary-dark: #2C313F;
+    --color-dark-rgb: 44, 49, 63 ;
+
+    --color-secondary-light: #CE99FF;
+    --color-secondary: #AD59FF;
+    --color-secondary-dark: #8A3AB9;
+    --color-secondary-rgb: 173, 89, 255;
+
+    /* #D3A3FF */
+    --color-tertiary-light: #66FFB0;  
+    /* --color-tertiary: #41F99B;   */
+    --color-tertiary: #2FCC7D;  
+    --color-tertiary-med: #2FCC7D;
+    --color-tertiary-dark: #00A14E;
+    /* --color-tertiary-rgb: 65, 249, 155;  */
+    --color-tertiary-rgb: 47, 204, 125;
+
+    --color-alternate-light: #FFB380;  
+    --color-alternate: #FF7619;  
+    --color-alternate-med: #E55D00;
+    --color-alternate-dark: #B24800;
+    --color-alternate-rgb: 255, 118, 25; 
+
+    --color-tertiary-altB-light: #ff76af;  
+    --color-tertiary-altB: #FF0C72;  
+    --color-tertiary-altB-med: #CC0A5B;  
+    --color-tertiary-altB-dark: #A6084A;
+    --color-tertiary-altB-rgb: 255, 12, 114;  
+
+    --color-tertiary-altC-light: #80B3FF;  
+    --color-tertiary-altC: #0C6DFF;  
+    --color-tertiary-altC-med: #0A57CC;  
+    --color-tertiary-altC-dark: #074299;  
+    --color-tertiary-altC-rgb: 12, 109, 255;  
+
+    --color-substitute: #E1FF87;    
+    --color-substitute: #C4FF0C;    
+    --color-substitute-med: #9DCC0A;
+    --color-substitute-dark: #769907;
+    --color-substitute-rgb: 196, 255, 12;    
+
+    --color-grey-medium: #e5e1e9;
+    --color-grey-light: #edebf0;
+    /* mono */
+    --color-white: #FFFFFF;
+    --color-white-rgb: 255,255,255;
+    --color-black: #1d1d1d;
+    --color-black-rgb: 29, 29, 29 ;
+
+    /* spacing */
+    --gutter: 4rem;
+    --gap-sm: 1rem;
+    --gap: 2rem;
+    --gap-large: 4rem;
+    --gap-xs: 0.75rem;
+
+    /* sizes */
+    --max-width: 1920px;
+    --header-height: 100px;
+
+    /* animation */
+    --transition: all 300ms ease-in-out;
+    --transition-button: all 125ms ease-in-out;
+    /* image */
+    --mix-blend: hard-light;
+}
+
+.home {
+    --default: var(--color-secondary);
+    --default-light: var(--color-secondary-light);
+    --default-dark: var(--color-secondary-dark);
+    --default-rgb: var(--color-secondary-rgb);
+}
+
+.green {
+    --default: var(--color-tertiary);
+    --default-light: var(--color-tertiary-light);
+    --default-dark: var(--color-tertiary-dark);
+    --default-overlay: var(--color-tertiary-overlay);
+    --default-rgb: var(--color-tertiary-rgb);
+}
+
+.orange {
+    --default: var(--color-alternate);
+    --default-light: var(--color-alternate-light);
+    --default-dark: var(--color-alternate-dark);
+    --default-overlay: var(--color-alternate-overlay);
+    --default-rgb: var(--color-alternate-rgb);
+}
+
+    .red {
+        --default: var(--color-tertiary-altB);  
+        --default-light: var(--color-tertiary-altB-light);
+        --default-dark: var(--color-tertiary-altB-dark);
+        --default-overlay: var(--color-tertiary-altB-overlay);
+        --default-rgb: var(--color-tertiary-altB-rgb);  
+    }
+
+    .blue {
+        --default: var(--color-tertiary-altC);  
+        --default-light: var(--color-tertiary-altC-light);
+        --default-dark: var(--color-tertiary-altC-dark);
+        --default-overlay: var(--color-tertiary-altC-overlay);
+        --default-rgb: var(--color-tertiary-altC-rgb);  
+    }
+
+
+@media screen and (max-width: 1920px){
+    :root {
+        /* --max-width: calc(100vw - var(--gutter)*2); */
+        --max-width: 100vw;
+        --gap-large: 2rem;
+
+    }
+}
+
+@media screen and (max-width: 880px){
+    :root {
+        --gutter: 2rem;
+        --gap-sm: 0.5rem;
+        --gap: 1rem;
+        --gap-large: 2rem;
+        --gap-xs: 0.25rem;
+    }
+}
+
+
+:root {
+    --column-width: calc(var(--max-width) - var(--gutter)*2);
+    /* --fourth-width: calc((var(--max-width) / 4) - (var(--gap)*4/3));
+    --qtr-width: calc((var(--max-width) / 4) - (var(--gap)*3/2));
+    --hlf-width: calc((var(--max-width) / 2) - (var(--gap)*2/1)); */
+    --fourth-width: calc((var(--column-width) / 4 ) - (var(--gap)*2/3));
+    --qtr-width: var(--fourth-width);
+    --hlf-width: calc((var(--column-width) / 2 ) - (var(--gap)*1/3));
+
+    --qtr-ratio-height: calc(var(--fourth-width) * .5625) ;
+    --hlf-ratio-height: calc(var(--hlf-width) * .5625) ;
+    
+}

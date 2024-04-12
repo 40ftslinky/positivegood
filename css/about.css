@@ -1,0 +1,208 @@
+/* about.css */
+
+.desc {
+    background-color: rgba(var(--color-white-rgb), 0.4);
+}
+.desc-container {
+    gap: var(--gap-large);
+}
+@media screen and (min-width: 1280px){
+    .desc-container {
+        justify-content: flex-end;
+    }
+}
+
+.desc-wrapper.left-column {
+    border-top: none;
+    padding-top: 0;
+    gap: 0;
+    min-width: unset;
+    max-width: unset;
+}
+
+.desc-wrapper.left-column,
+.desc-wrapper.right-column {
+    gap: 0;
+}
+
+
+.desc-wrapper.left-column *,
+.desc-wrapper.right-column * {
+    /* margin: 0; */
+}
+.desc-wrapper.right-column p {
+    margin-bottom: 0.75rem;
+}
+
+
+
+/* -------------------------------------------------------- */
+/* What */
+
+.member-items {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* gap: var(--gap); */
+    margin-bottom: var(--gutter);
+} 
+@media screen and (max-width: 1080px) {
+    .member-items {
+        /* flex-direction: column; */
+    }
+    
+}
+.member-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--gap-sm), var(--gap);
+    width: 18vw;
+    max-width: calc(var(--max-width)/3 - (var(--gap)*3/2));
+    
+}
+
+@media screen and (max-width: 1080px) {
+    .member-item {
+        /* width: 100%; */
+        min-width: calc(100%/3 - var(--gap));
+    } 
+}
+@media screen and (max-width: 680px) {
+    .member-item {
+        width: 100%;
+        max-width: calc(100%/2 - var(--gap));
+    }   
+}
+@media screen and (max-width: 420px) {
+    .member-item {
+        /* width: 100%; */
+    }   
+}
+
+.member-item img {
+    width: 140px;
+    max-width: 50vw;
+    height: 100px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    transform: scale(1);
+    -webkit-filter: saturate(0);
+            filter: saturate(0);
+    transition: var(--transition);
+}
+.member-item:hover img {
+    transform: scale(1.05);
+    -webkit-filter: saturate(1);
+            filter: saturate(1);
+    transition: var(--transition);
+}
+
+.member-item h3 {
+    font-size: 1.875rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+}
+.member-item p {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+}
+.member-item a {
+    font-size: 1.0rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    /* margin-bottom: var(--gap-sm); */
+}
+.member-item a:hover {
+    color: var(--color-primary-dark);
+}
+
+.member-wrapper .right-column {}
+
+
+/* awards */
+
+
+.awards-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: var(--gap);
+    margin-bottom: var(--gutter);
+} 
+@media screen and (max-width: 1080px) {
+    .awards-items {
+        flex-direction: column;
+    }
+    
+}
+.awards-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    width: 18vw;
+    max-width: calc(var(--max-width)/3 - (var(--gap)*3/2));
+}
+
+@media screen and (max-width: 1080px) {
+    .awards-item {
+        width: 100%;
+        min-width: calc(100%/3 - var(--gap));
+    }
+    
+}
+
+.awards-item img {
+    width: 140px;
+    max-width: 50vw;
+    height: 100px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    transform: scale(1);
+    -webkit-filter: saturate(0);
+            filter: saturate(0);
+    transition: var(--transition);
+}
+ .awards-item:hover img {
+    transform: scale(1.05);
+    -webkit-filter: saturate(1);
+            filter: saturate(1);
+    transition: var(--transition);
+}
+
+.awards-item h3 {
+    font-size: 1.875rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+}
+.awards-item p {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+}
+.awards-item a {
+    font-size: 1.0rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    /* margin-bottom: var(--gap-sm); */
+}
+.awards-item a:hover {
+    color: var(--color-primary-dark);
+}
+
+.awards-wrapper .right-column {}

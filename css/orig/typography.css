@@ -1,0 +1,126 @@
+/* typography.css */
+
+:root {
+    --base-font-family: 'Work Sans', Arial,sans-serif;
+    --header-font-family: 'Work Sans', Arial,sans-serif;
+    --base-line-height: 1.55;
+    --base-font-percent: 62.5%;
+    --base-font-size: 16px, 1rem;
+    /* specific */
+    --base-font-weight: 400;
+    --button-font-weight: 500;
+    --link-font-weight: 600;
+    --heading-font-weight: 900;
+    /*  */
+    /* Light 300 */
+    /* Regular 400 */
+    /* Medium 500 */
+    /* Semi-bold 600 */
+    /* Bold 700 */
+    /* ExtraBold 800 */
+    /* Black 900 */
+    --light-font-weight: 300;
+    --reg-font-weight: 400;
+    --med-font-weight: 500;
+    --semi-font-weight: 600;
+    --bold-font-weight: 700;
+    --extra-font-weight: 800;
+    --black-font-weight: 900;
+
+    /*  */
+    --font-size-base: 1rem;
+    --font-size-xs: 0.6rem;
+    --font-size-sm: 0.8rem;
+    --font-size-md: 1.2rem;
+    --font-size-lg: 1.4rem;
+    --font-size-xl: 2.2rem;
+    --font-size-xxl: 2.4rem;
+    --font-size-jumbo: 7.2rem;
+    --font-size-jumbo-sm: 4.2rem;
+    /*  */
+    --font-awesome: 'FontAwesome';
+    /*  */
+    --intro-font: 28px;
+    --large-font: 18px;
+    --normal-font: 16px;
+    --small-font: 14px;
+    --micro-font: 12px;
+}
+
+* {
+    font-family: "Work Sans", sans-serif;
+}
+
+html {font-size: 100%;} /* 16px */
+
+body {
+    font-family: var(--base-font-family);
+    font-weight: 400;
+    font-weight: var(--base-font-weight);
+    line-height: 1.55;
+    line-height: var(--base-line-height);
+	font-style: normal;
+    color: var(--blue-dark);
+}
+
+.normal { font-size: var(--font-size-base); }
+.micro { font-size: var(--font-size-xs); }
+.small, small { font-size: var(--font-size-sm); }
+.medium { font-size: var(--font-size-md); }
+.large { font-size: var(--font-size-lg) ; }
+.xlarge { font-size: var(--font-size-xl) ; }
+
+.scaling_text {
+    font-size: max(1rem,min(.38835vw + .908981rem,1.375rem));
+}
+
+/* headings */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--header-font-family);
+    font-weight: 900;
+    font-weight: var(--heading-font-weight);
+    line-height: 1.2;
+    margin: 0 0 1.5rem 0;
+    color: var(--color-primary-dark);
+}
+
+.site-title h1 {
+    margin-bottom: 0;
+}
+
+h1.hero-headline {
+    font-size: calc(14vw - 40px);
+    font-size: clamp(5.9375rem, -1.2019rem + 12.9808vw, 14.375rem);
+            /* 1920/235 */
+    color: var(--color-secondary);
+    font-weight: 900;
+    line-height: .8;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+
+
+/* paragraphs */
+
+p {
+    margin: 0 0 1.5rem 0;
+}
+
+.intro, .intro_light {
+    font-size: var(--intro-font);
+}
+.intro {
+    margin-bottom: 2rem;
+    font-weight: var(--med-font-weight);
+}
+.intro_light {
+    margin-bottom: 0;
+    font-weight: var(--light-font-weight);
+}
+
+.hero .intro, 
+.hero .intro_light {
+    max-width: 75ch;
+}

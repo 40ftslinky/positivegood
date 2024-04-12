@@ -1,0 +1,174 @@
+// /* navigation.css */
+
+// /* sass variables */
+// Define your variable at the top of your SCSS file
+$color-primary: #4D4D4F;
+$color-primary-dark: #2C313F;
+$color-secondary: #AD59FF;
+$color-secondary-dark: #8A3AB9;
+$color-secondary-light: #CE99FF;
+$color-white: #ffffff;
+$color-white-rgb: 255, 255, 255;
+$transition: all 300ms ease-in-out;
+$header-height: 100px;
+
+$med-font-weight: 500;
+
+header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
+    height: $header-height;
+    margin-bottom: 20px;
+    padding: 10px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.site-title h1 {
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    color: $color-primary;
+    text-decoration: none;
+    margin: 0;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    z-index: 1001;
+}
+
+.logo svg {
+    transform: scale(0.8);
+    transform-origin: center center;
+    transition: $transition;
+}
+.logo:hover svg {
+    transform: scale(0.9);
+}
+
+.active .logo .cross {
+    fill: white;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 0;    
+}
+
+.hamburger {
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin-bottom: 5px;
+}
+.hamburger span:last-child {
+  margin-bottom: 0;
+}
+
+/* START OF USEFUL CODE */
+.hamburger {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: rgba($color-white-rgb, 0);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1001;
+    transition: $transition;
+
+    &:hover  {
+        background-color: $color-white;
+    }
+
+    & span,
+    &:before,
+    &:after {
+     content: " ";
+     display: block;
+     width: 30px;
+     height: 3px;
+     border-radius: 3px;
+     background-color: $color-primary;
+     transform: rotate(0);
+     position: absolute;
+     left: 10px;
+     transition: $transition;
+    }
+    
+    &:before {
+     top: 16px;
+    }
+    & span {
+     top: 24px;
+     opacity: 1;
+    }
+    &:after {
+     bottom: 15px;
+    }
+    
+    &.active {
+        background-color: $color-secondary;
+    }
+    &.active:hover {
+        background-color: $color-secondary-dark;
+    }
+    &.active span {
+     opacity: 0;
+     top: 25px;
+     transform: rotate(90deg);
+    }
+    &.active:before {
+     width: 34px;
+     top: 25px;
+     left: 8px;
+     transform: rotate(45deg);
+    }
+    &.active:after {
+     width: 34px;
+     bottom: 24px;
+     left: 8px;
+     transform: rotate(-45deg);
+    }
+   }
+
+.fullscreen-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+  transition: background-color 0.3s ease-in-out;
+  transition-delay: 2s;
+}
+
+.hamburger.active ~ .fullscreen-menu {
+  display: block;
+  background-color: $color-secondary;
+  transition: background-color 0.3s ease-in-out;
+  transition-delay: 2s;
+}

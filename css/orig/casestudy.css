@@ -1,0 +1,230 @@
+
+/* -------------------------------------------------------- */
+/* Case Studies */
+
+
+.casestudies-heading {
+    text-transform: uppercase;
+}
+
+.casestudies-items {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}
+@media screen and (max-width: 1080px) {
+    .casestudies-items {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+    }
+}
+
+.casestudy-item {
+    transform: scale(1);
+    transition: all 3.2s cubic-bezier(.075,.82,.165,1);
+}
+
+
+.casestudy-item:nth-of-type(1) { grid-area: 1 / 1 / 2 / 2; }
+.casestudy-item:nth-of-type(2) { grid-area: 1 / 2 / 2 / 3; }
+.casestudy-item:nth-of-type(3) { grid-area: 2 / 1 / 4 / 3; grid-row-start: 2; }
+.casestudy-item:nth-of-type(4) { grid-area: 1 / 3 / 3 / 5; }
+.casestudy-item:nth-of-type(5) { grid-area: 3 / 3 / 4 / 4; }
+.casestudy-item:nth-of-type(6) { grid-area: 3 / 4 / 4 / 5; }
+.casestudy-item:nth-of-type(7) { grid-area: 4 / 1 / 5 / 2;  grid-row-start: 4;}
+.casestudy-item:nth-of-type(8) { grid-area: 4 / 2 / 5 / 3;  }
+.casestudy-item:nth-of-type(9) { grid-area: 4 / 3 / 5 / 4;  }
+.casestudy-item:nth-of-type(10) { grid-area: 4 / 4 / 5 / 5;  }  
+
+.casestudy-item:nth-of-type(1),
+.casestudy-item:nth-of-type(2),
+.casestudy-item:nth-of-type(5),
+.casestudy-item:nth-of-type(6) { 
+    height: var(--qtr-ratio-height);
+    max-height: var(--qtr-ratio-height);
+    width: var(--qtr-width);
+}
+
+.casestudy-item:nth-of-type(7),
+.casestudy-item:nth-of-type(8),
+.casestudy-item:nth-of-type(9),
+.casestudy-item:nth-of-type(10) { 
+    height: var(--qtr-ratio-height);
+    max-height: var(--qtr-ratio-height);
+    width: var(--qtr-width);
+}
+.casestudy-item:nth-of-type(3),
+.casestudy-item:nth-of-type(4) { 
+    height: var(--hlf-ratio-height);
+    max-height: var(--hlf-ratio-height);
+    /* width: var(--hlf-width); */
+}
+
+ 
+
+@media screen and (max-width: 1080px) {
+    .casestudy-item:nth-of-type(n) {
+        height: calc(var(--column-width) * 9/16 + 2rem);
+        max-height: calc(var(--column-width) * 9/16 + 2rem);
+        width: 100%;    
+    }
+    
+}
+
+.casestudy-item .ProjectItem__Media {
+    /* transform: scale(1.05); */
+}  
+
+.casestudy-item .Media__Item {
+    overflow: hidden;
+}
+
+.casestudy-item:nth-of-type(2) .Media__Item,
+.casestudy-item:nth-of-type(4) .Media__Item,
+.casestudy-item:nth-of-type(6) .Media__Item {
+    display: flex;
+    justify-content: center;
+}
+
+.video--ratio-4x3 {
+    /* for embbeded videos */
+    /* padding-top: calc((75% + 20px)* 1 - 20px); */
+}
+
+.casestudy-item:nth-of-type(n) video {
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+}
+.casestudy-item:nth-of-type(n):hover video {
+    filter: none;
+    -webkit-filter: grayscale(1);
+}
+  
+.casestudy-item .Media__Item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: calc(var(--column-width) * 9/16 ) !important;
+  /* padding-top: 10px; */
+  background-color: rgba(var(--default-rgb),0.4); /* Change the color and opacity as needed */
+  transition: var(--transition);
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+}
+.casestudy-item:hover .Media__Item::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.casestudy-item .Media__Item img{
+    width: 100%;
+    min-height: 100%;
+    aspect-ratio: 1 / 1;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: var(--transition);
+}
+
+.casestudy-item:hover .Media__Item img {
+    transform: scale(1.0125);
+    -webkit-filter: saturate(0) brightness(0.5);
+            filter: saturate(0) brightness(0.5);
+}   
+
+.casestudy-item .ProjectItem__Content {
+    position: absolute;
+    transition: var(--transition);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 333;
+    /* padding-top: 10px; */
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+.casestudy-item:hover .ProjectItem__Content {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (max-width: 1080px) {
+    .casestudy-item .ProjectItem__Content {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        height: 2rem;
+        max-height: unset;
+    }
+}
+
+.casestudy-item:nth-of-type(1) *:not(.casestudy-title),
+.casestudy-item:nth-of-type(2) *:not(.casestudy-title),
+.casestudy-item:nth-of-type(5) *:not(.casestudy-title),
+.casestudy-item:nth-of-type(6) *:not(.casestudy-title),
+.casestudy-item:nth-of-type(7) *:not(.casestudy-title),
+.casestudy-item:nth-of-type(8) *:not(.casestudy-title),
+.casestudy-item:nth-of-type(9) *:not(.casestudy-title),
+.casestudy-item:nth-of-type(10) *:not(.casestudy-title) { 
+    height: var(--qtr-ratio-height);
+    max-height: var(--qtr-ratio-height);
+}
+.casestudy-item:nth-of-type(3) *:not(.casestudy-title),
+.casestudy-item:nth-of-type(4) *:not(.casestudy-title) { 
+    height: var(--hlf-ratio-height);
+    max-height: var(--hlf-ratio-height);
+}
+
+
+
+
+@media screen and (max-width: 1080px) {
+    .casestudy-item:nth-of-type(n) *:not(.casestudy-title),
+    .casestudy-item:nth-of-type(n) *:not(.casestudy-title) {        
+        height: unset;
+        max-height: unset;
+        /* height: calc(var(--column-width) * 9/16);
+        max-height: calc(var(--column-width) * 9/16); */
+    }
+    .casestudy-item:nth-of-type(n) .MediaItem__Content,
+    .casestudy-item:nth-of-type(n) img,
+    .casestudy-item:nth-of-type(n) video {
+        height: calc(var(--column-width) * 9/16 ) !important;
+        max-height: calc(var(--column-width) * 9/16 ) !important;
+    }
+    .casestudy-item:nth-of-type(n) .ProjectItem__Content
+    .casestudy-item:nth-of-type(n) .casestudy-title {
+        height: 2rem;
+        max-height: 2rem;
+    }
+    
+}
+
+.casestudy-title {
+    font-weight: 400;
+    margin-bottom: 0;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    color: white;
+}
+@media screen and (max-width: 1080px) {
+    .casestudy-title {
+        color: var(--color-primary);
+        padding: 0.5rem 0 0 0;
+    }
+}
+
+

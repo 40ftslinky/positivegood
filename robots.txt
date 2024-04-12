@@ -1,0 +1,10 @@
+
+User-agent: Googlebot
+Disallow: /nogooglebot/
+Disallow: /archive/
+Disallow: /other/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://positivegood.com.au/sitemap.xml

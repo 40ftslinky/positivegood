@@ -1,0 +1,116 @@
+/* team.css */
+
+.teams {
+    background-color: rgba(var(--color-white-rgb), 0.4);
+}
+.teams-container {
+    gap: var(--gap-large);
+}
+@media screen and (min-width: 1280px){
+    .teams-container {
+        justify-content: flex-end;
+    }
+}
+
+.teams-wrapper.left-column {
+    border-top: none;
+    padding-top: 0;
+    gap: 0;
+    min-width: unset;
+    max-width: unset;
+}
+
+.teams-wrapper.left-column,
+.teams-wrapper.right-column {
+    gap: 0;
+}
+
+.teams-wrapper.left-column *,
+.teams-wrapper.right-column * {
+    margin: 0;
+}
+.teams-wrapper.right-column p {
+    margin-bottom: 0.75rem;
+}
+
+@media screen and (max-width: 1080px) {
+    .teams [class*='-img'] {
+        height: unset;
+    }
+}
+
+.teams [class*='-img'] img {
+    max-width: calc(25vw - var(--gap));
+}
+
+@media screen and (max-width: 1080px) {
+    .teams [class*='-img'] img {
+        max-width: 50vw;
+    }
+}
+
+
+/* -------------------------------------------------------- */
+/* What */
+
+.what-skills {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: var(--gap);
+    margin-bottom: var(--gutter);
+} 
+@media screen and (max-width: 1080px) {
+    .what-skills {
+        flex-direction: column;
+    }
+    
+}
+.what-skill {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--gap-sm);
+}
+
+@media screen and (max-width: 1280px) {
+    .what-skill {
+        min-width: calc(100%/3 - var(--gap));
+    }
+    
+}
+
+.what-skill img {
+    width: 140px;
+    max-width: 30%;
+    height: 100px;
+    object-fit: contain;
+}
+.what-skill h3 {
+    font-size: 1.875rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+}
+.what-skill p {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+}
+.what-skill a {
+    font-size: 1.0rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    /* margin-bottom: var(--gap-sm); */
+}
+.what-skill a:hover {
+    color: var(--color-primary-dark);
+
+}
+
+.what-wrapper .right-column {}

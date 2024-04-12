@@ -1,0 +1,42 @@
+/* contact.css */
+
+/* contact.css */
+
+form {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+form button[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--default);
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+form button[type="submit"]:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url('icon.png');
+    background-size: cover;
+}
+
